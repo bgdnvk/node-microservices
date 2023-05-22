@@ -12,4 +12,6 @@ const response = await axios.get(`http://${serviceAHost}:${serviceAPort}/api/dat
 ```
 
 build images then execute/kubernetes/start.sh  
-the service-microservice-b exposes port 4000
+the service-microservice-b exposes port 4000  
+
+make a call to `http://localhost:4000/api/call-microservice-a` once everything is setup, this service (ms-b) will call microservice-a
