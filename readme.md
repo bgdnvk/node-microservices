@@ -10,3 +10,6 @@ const serviceAPort = process.env.MICROSERVICE_A_PORT;
 const response = await axios.get(`http://${serviceAHost}:${serviceAPort}/api/data`);
 
 ```
+
+build images then execute/kubernetes/start.sh  
+the service-microservice-b exposes port 4000
