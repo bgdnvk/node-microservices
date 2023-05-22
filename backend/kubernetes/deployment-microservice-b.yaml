@@ -16,5 +16,6 @@ spec:
       containers:
       - name: microservice-b
         image: microservice-b
+        imagePullPolicy: Never
         ports:
         - containerPort: 4000
