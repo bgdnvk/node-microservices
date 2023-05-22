@@ -3,6 +3,11 @@ const axios = require('axios');
 const app = express();
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  console.log('microservice B hit')
+  res.json({ message: 'ms B hit' });
+})
+
 app.get('/api/call-microservice-a', async (req, res) => {
   try {
     const response = await axios.get('http://localhost:3000/api/data');

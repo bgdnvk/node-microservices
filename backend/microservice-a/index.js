@@ -2,6 +2,11 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    console.log('microservice A hit')
+    res.json({ message: 'ms A hit' });
+})
+
 app.get('/api/data', (req, res) => {
     console.log('microservice A hit')
     res.json({ message: 'Hello from Microservice A' });
