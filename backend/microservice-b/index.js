@@ -10,7 +10,8 @@ app.get('/', (req, res) => {
 
 app.get('/api/call-microservice-a', async (req, res) => {
   try {
-    const response = await axios.get('http://localhost:3000/api/data');
+    // const response = await axios.get('http://localhost:3000/api/data');
+    const response = await axios.get(`http://${process.env.MICROSERVICE_A_SERVICE_HOST}:${process.env.MICROSERVICE_A_SERVICE_PORT}/api/data`);
     res.json({ message: `Microservice A says: ${response.data.message}` });
   } catch (error) {
     console.error('Error calling Microservice A:', error.message);
